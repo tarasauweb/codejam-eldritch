@@ -1,1 +1,1 @@
-My standard webpack-5
+codejam-eldritch"
