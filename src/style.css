@@ -50,3 +50,44 @@ body{
     background-color: chartreuse;
     transition: 0.5s;
 }
+.active-lvl{
+    background-color: chartreuse;
+}
+.deck-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.my-stages{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.stages{
+    display: flex;
+    flex-direction: column;
+}
+.curcle{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(42, 165, 83);
+    margin-right: 10px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.brownCards{
+    background-color: brown;
+}
+.blueCards{
+    background-color: blue;
+}
+.stage{
+    display: flex;
+}

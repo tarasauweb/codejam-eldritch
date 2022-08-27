@@ -4,14 +4,11 @@ let initialState = {
 }
 let reducer = (state=initialState,action)=>{
     if(action.type === 'CHOOSE__CARD'){
-        
         state.card = action.card
-        console.log(state)
         return state
     }
     else if(action.type === 'CHOOSE__LVL'){
         state.lvl = action.lvl
-        console.log(state)
         return state
     }
     return state
