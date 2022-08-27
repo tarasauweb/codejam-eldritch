@@ -23,9 +23,9 @@ function createBtnDeck () {
                 return item
             }
         })
-        const stage2 = document.querySelectorAll('.stage-2 .curcle')
-        const stage1 = document.querySelectorAll('.stage-1 .curcle')
-        const stage0 = document.querySelectorAll('.stage-0 .curcle')
+        const stage2 = document.querySelectorAll('.stage-1 .curcle')
+        const stage1 = document.querySelectorAll('.stage-2 .curcle')
+        const stage0 = document.querySelectorAll('.stage-3 .curcle')
         for(let i = 0 ; i <stage2.length;i++){
             if(stage2[i].getAttribute('data') == Object.keys(myAncient[0].firstStage)[i] ){
                 stage2[i].textContent = Object.values(myAncient[0].firstStage)[i]
