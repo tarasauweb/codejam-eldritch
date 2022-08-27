@@ -46,13 +46,20 @@ function createBtnDeck () {
 
 }
 let colorsArr = ['greenCards' , 'brownCards' , 'blueCards']
+const stagesNameArr = ["Этап 3" , "Этап 2" , "Этап 1"]
+const stagesArr = [3,2,1]
 function createStage(div){
     colorsArr.reverse()
     for(let i = 0 ; i<3;i++){
+        
         const stageDiv = document.createElement('div')
+        const stageName = document.createElement('div')
+        stageName.classList.add('stage-name')
+        stageName.textContent = `${stagesNameArr[i]}`
         stageDiv.classList.add('stage')
-        stageDiv.classList.add(`stage-${i}`)
+        stageDiv.classList.add(`stage-${stagesArr[i]}`)
         div.insertAdjacentElement('afterbegin' , stageDiv)
+        stageDiv.insertAdjacentElement('beforebegin' , stageName)
         for(let j = 0 ; j <3;j++){
             const divSomeStage = document.createElement('div')
             stageDiv.insertAdjacentElement('afterbegin' , divSomeStage)
