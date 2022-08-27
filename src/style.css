@@ -30,3 +30,23 @@ body{
     margin-top: 20px;
     width: 100%;
 }
+.btns-level{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+.level-btn{
+    margin-right: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    background-color: cadetblue;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+.level-btn:hover{
+    background-color: chartreuse;
+    transition: 0.5s;
+}
