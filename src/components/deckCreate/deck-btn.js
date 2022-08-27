@@ -1,5 +1,6 @@
 import myStore from '../createStore/createStore'
 import ancientsData from '../../data/ancients'
+import createDeck from './deck'
 function createBtnDeck () {
     const state = myStore.getState()
     const deckBtn = document.createElement('button')
@@ -17,6 +18,7 @@ function createBtnDeck () {
         divBtnDeck.insertAdjacentElement('afterend' , divStages)
         divStages.classList.add('my-stages')
         divStages.insertAdjacentElement('afterbegin' , divForStage)
+        divStages.insertAdjacentElement('beforeend' , createDeck())
         const myAncient = ancientsData.filter(item=>{
             if(item.id === state.card){
                 createStage(divForStage)
