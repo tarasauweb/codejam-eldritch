@@ -19,10 +19,14 @@ function createDeck() {
 let startGame = false;
 let arrStartgame
 let count = 0
+let playGame = false
+let cards
+let stage1Complite = false
+let stage2Complite = false
+let stage3Complite = false
 function listenerDeck() {
   if (!startGame) {
     startGame = true
-    console.log("hohohoho");
     let state = myStore.getState();
     let sumGreenCards = null;
     let sumBlueCards = null;
@@ -160,9 +164,106 @@ function listenerDeck() {
       );
   }
   else{
-    count++
-    console.log(count)
-    console.log(arrStartgame)
+    const myStages = document.querySelector('.my-stages')
+    let deck = document.querySelector('.deck')
+    let arrStateName = document.querySelectorAll('.stage-name')
+    if(!playGame){
+        playGame = true
+        cards = document.createElement('div')
+        cards.classList.add('cards')
+        myStages.insertAdjacentElement('beforeend' , cards)
+    }
+    if(!stage1Complite){
+        let divGreenCircle = document.querySelector('.stage-1 .greenCards')
+        let divBrownCircle = document.querySelector('.stage-1 .brownCards')
+        let divBlueCircle = document.querySelector('.stage-1 .blueCards')
+        let numGreen = parseInt(divGreenCircle.textContent)
+        let numBrown = parseInt(divBrownCircle.textContent)
+        let numBlue = parseInt(divBlueCircle.textContent)
+        
+        cards.style.background = `url('${arrStartgame[0][count].cardFace}')`
+        // console.log(arrStartgame[0][count].color)
+        if(arrStartgame[0][count].color === 'green'){
+            console.log('green')
+            console.log(numGreen)
+            divGreenCircle.textContent = numGreen-1
+        }
+        else if(arrStartgame[0][count].color === 'brown'){
+            console.log('brown')
+            divBrownCircle.textContent = numBrown -1
+        }
+        else if(arrStartgame[0][count].color === 'blue'){
+            console.log('blue')
+            divBlueCircle.textContent = numBlue - 1
+        }
+        count++
+        if(count >=arrStartgame[0].length){
+            stage1Complite = true
+            arrStateName[0].style.color = 'red'
+            count = 0
+        }
+    }
+    else if(stage1Complite && !stage2Complite){
+        let divGreenCircle = document.querySelector('.stage-2 .greenCards')
+        let divBrownCircle = document.querySelector('.stage-2 .brownCards')
+        let divBlueCircle = document.querySelector('.stage-2 .blueCards')
+        let numGreen = parseInt(divGreenCircle.textContent)
+        let numBrown = parseInt(divBrownCircle.textContent)
+        let numBlue = parseInt(divBlueCircle.textContent)
+        if(arrStartgame[1][count].color === 'green'){
+            console.log('green')
+            console.log(numGreen)
+            divGreenCircle.textContent = numGreen-1
+        }
+        else if(arrStartgame[1][count].color === 'brown'){
+            console.log('brown')
+            divBrownCircle.textContent = numBrown -1
+        }
+        else if(arrStartgame[1][count].color === 'blue'){
+            console.log('blue')
+            divBlueCircle.textContent = numBlue - 1
+        }
+        cards.style.background = `url('${arrStartgame[1][count].cardFace}')`
+        count++
+        if(count >=arrStartgame[1].length){
+            stage2Complite = true
+            count = 0
+            arrStateName[1].style.color = 'red'
+        }
+    }
+    else if(stage2Complite && !stage3Complite){
+        let divGreenCircle = document.querySelector('.stage-3 .greenCards')
+        let divBrownCircle = document.querySelector('.stage-3 .brownCards')
+        let divBlueCircle = document.querySelector('.stage-3 .blueCards')
+        let numGreen = parseInt(divGreenCircle.textContent)
+        let numBrown = parseInt(divBrownCircle.textContent)
+        let numBlue = parseInt(divBlueCircle.textContent)
+        if(arrStartgame[2][count].color === 'green'){
+            console.log('green')
+            console.log(numGreen)
+            divGreenCircle.textContent = numGreen-1
+        }
+        else if(arrStartgame[2][count].color === 'brown'){
+            console.log('brown')
+            divBrownCircle.textContent = numBrown -1
+        }
+        else if(arrStartgame[3][count].color === 'blue'){
+            console.log('blue')
+            divBlueCircle.textContent = numBlue - 1
+        }
+        cards.style.background = `url('${arrStartgame[2][count].cardFace}')`
+        count++
+        if(count >=arrStartgame[2].length){
+            stage3Complite = true
+            startGame = false
+            deck.style.display = 'none'
+            count = 0
+            stage1Complite = false
+            stage2Complite = false
+            stage3Complite = false
+            arrStateName[2].style.color = 'red'
+        }
+    }
   }
 }
 

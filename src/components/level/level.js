@@ -38,6 +38,7 @@ function setLevel() {
                     createBtnDeck()
                 }
                 btnsArr.forEach(item=>{
+                    item.setAttribute('disabled' , true)
                     item.classList.remove('active-lvl')
                 })
                 e.target.classList.add('active-lvl')

@@ -12,6 +12,7 @@ function createBtnDeck () {
     btnsLvl.insertAdjacentElement('afterend' , divBtnDeck)
     divBtnDeck.insertAdjacentElement('afterbegin' , deckBtn)
     deckBtn.addEventListener('click' , ()=>{
+        deckBtn.setAttribute('disabled' , true)
         const divStages = document.createElement('div')
         const divForStage = document.createElement('div')
         divForStage.classList.add('stages')
@@ -48,9 +49,11 @@ function createBtnDeck () {
 
 }
 let colorsArr = ['greenCards' , 'brownCards' , 'blueCards']
+let attr = ['green' , 'brown' , 'blue']
 const stagesNameArr = ["Этап 3" , "Этап 2" , "Этап 1"]
 const stagesArr = [3,2,1]
 function createStage(div){
+    attr.reverse()
     colorsArr.reverse()
     for(let i = 0 ; i<3;i++){
         
@@ -69,6 +72,7 @@ function createStage(div){
             divSomeStage.classList.add(`curcle-${j}`)
             divSomeStage.classList.add(`${colorsArr[j]}`)
             divSomeStage.setAttribute('data'  , `${colorsArr[j]}`)
+            divSomeStage.setAttribute('color' ,attr[j] )
         }
     }
 }
