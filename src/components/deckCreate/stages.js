@@ -59,7 +59,6 @@ export const getAllCardsArr = (...arr)=>{
     
 
     allArraysCardsForStart = [arrForStage1,arrForStage2,arrForStage3]
-    console.log(allArraysCardsForStart)
     return allArraysCardsForStart
 
 } 

@@ -182,18 +182,13 @@ function listenerDeck() {
         let numBlue = parseInt(divBlueCircle.textContent)
         
         cards.style.background = `url('${arrStartgame[0][count].cardFace}')`
-        // console.log(arrStartgame[0][count].color)
         if(arrStartgame[0][count].color === 'green'){
-            console.log('green')
-            console.log(numGreen)
             divGreenCircle.textContent = numGreen-1
         }
         else if(arrStartgame[0][count].color === 'brown'){
-            console.log('brown')
             divBrownCircle.textContent = numBrown -1
         }
         else if(arrStartgame[0][count].color === 'blue'){
-            console.log('blue')
             divBlueCircle.textContent = numBlue - 1
         }
         count++
@@ -211,16 +206,12 @@ function listenerDeck() {
         let numBrown = parseInt(divBrownCircle.textContent)
         let numBlue = parseInt(divBlueCircle.textContent)
         if(arrStartgame[1][count].color === 'green'){
-            console.log('green')
-            console.log(numGreen)
             divGreenCircle.textContent = numGreen-1
         }
         else if(arrStartgame[1][count].color === 'brown'){
-            console.log('brown')
             divBrownCircle.textContent = numBrown -1
         }
         else if(arrStartgame[1][count].color === 'blue'){
-            console.log('blue')
             divBlueCircle.textContent = numBlue - 1
         }
         cards.style.background = `url('${arrStartgame[1][count].cardFace}')`
@@ -239,16 +230,12 @@ function listenerDeck() {
         let numBrown = parseInt(divBrownCircle.textContent)
         let numBlue = parseInt(divBlueCircle.textContent)
         if(arrStartgame[2][count].color === 'green'){
-            console.log('green')
-            console.log(numGreen)
             divGreenCircle.textContent = numGreen-1
         }
         else if(arrStartgame[2][count].color === 'brown'){
-            console.log('brown')
             divBrownCircle.textContent = numBrown -1
         }
         else if(arrStartgame[3][count].color === 'blue'){
-            console.log('blue')
             divBlueCircle.textContent = numBlue - 1
         }
         cards.style.background = `url('${arrStartgame[2][count].cardFace}')`
