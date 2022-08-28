@@ -1,6 +1,7 @@
 let initialState = {
     card : '',
-    lvl : ''
+    lvl : '',
+    difficulty:''
 }
 let reducer = (state=initialState,action)=>{
     if(action.type === 'CHOOSE__CARD'){
@@ -9,6 +10,7 @@ let reducer = (state=initialState,action)=>{
     }
     else if(action.type === 'CHOOSE__LVL'){
         state.lvl = action.lvl
+        state.difficulty = action.difficulty
         return state
     }
     return state
@@ -24,9 +26,10 @@ export const chooseActionCreator = (card)=>{
         card:card
     }
 }
-export const chooseLvlActionCreator = (lvl)=>{
+export const chooseLvlActionCreator = (lvl,difficulty)=>{
     return{
         type:'CHOOSE__LVL',
-        lvl:lvl
+        lvl:lvl,
+        difficulty:difficulty
     }
 }
